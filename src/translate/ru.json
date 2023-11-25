@@ -1,3 +1,7 @@
 {
-    "home.title": "Главная ру"
+    "home.title": "Главная",
+    "products.title": "Продукты",
+    "menu.home": "Главная",
+    "menu.products": "Продукты",
+    "global.close": "закрыть"
 }

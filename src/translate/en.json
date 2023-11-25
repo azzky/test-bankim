@@ -1,3 +1,7 @@
 {
-    "home.title": "Title english"
+    "home.title": "homepage",
+    "products.title": "Products",
+    "menu.home": "Home",
+    "menu.products": "Products",
+    "global.close": "close"
 }
