@@ -12,10 +12,16 @@
     max-width: 100%;
     width: 100%;
     display: block;
+    font-size: 14px;
 }
 
 .form input {
     width: calc(100% - 22px);
+}
+
+.form input,
+.form select {
+    margin-top: 15px;
 }
 
 .input {
