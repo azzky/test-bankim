@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form"
 import classes from './home.module.css'
 import 'react-input-range/lib/css/index.css'
 import './global.css';
-import { useCallback, useState } from 'react';
+import useSubmit from './hooks/useForm';
 
 const cities = [
     { value: 'telaviv', label: 'Tel Aviv' },
@@ -27,33 +27,54 @@ const isOwnOptions = [
     { value: '1', label: 'yes' }
 ]
 
+// const onSubmit = ({ values }) => console.log(values);
+
 const Home = () => {
     const { register, handleSubmit, formState: {errors} } = useForm()
-    const [initialValue, setInitialValue] = useState(1000000);
-    const [initialPayment, setInitialPayment] = useState(initialValue / 2);
-    const [years, setYears] = useState(4);
-    const monthlyPayValue = (initialValue - initialPayment) / years / 12 * 1.1053;
-    const [monthlyPay, setMnothlyPay] = useState(monthlyPayValue);
-
-    const submitForm = useCallback(data => {
-        console.log(data);
-    }, []);
-
+    const {
+        changeInitialPayment,
+        changeInitialValue,
+        changeMonthlyPayment,
+        changeYears,
+        initialValue,
+        initialPayment,
+        years,
+        monthlyPay,
+        monthlyPayValue,
+        percent,
+        submitForm
+    } = useSubmit()
+    console.log({
+        changeInitialPayment,
+        changeInitialValue,
+        changeMonthlyPayment,
+        changeYears,
+        initialValue,
+        initialPayment,
+        years,
+        monthlyPay,
+        monthlyPayValue,
+        percent,
+        submitForm
+    });
     return (
         <>
             <h1>
                 <FormattedMessage id="home.title"/>
             </h1>
-            <form onSubmit={handleSubmit(submitForm)}
-            className={classes.form}>
+            <form
+                onSubmit={handleSubmit(submitForm)}
+                className={classes.form}
+            >
                 <div>
                     <label>
                         <FormattedMessage id="ipotekaForm.totalvalueTitle"/>
                         <input type="number"
+                            name="totalValue"
                             className={`${classes.input} ${errors.totalValue ? classes.error : ''}`}
                             {...register("totalValue", { required: true })}
                             value={initialValue}
-                            onChange={e => setInitialValue(e.target.value)}
+                            onChange={changeInitialValue}
                         />
                     </label>
                     {errors.totalValue && <p className={classes.errorMessage}>
@@ -93,21 +114,29 @@ const Home = () => {
                     </p>}
                 </div>
                 <div>
-                    <label>
+                    <label onChange={changeInitialPayment}>
                         <FormattedMessage id="ipotekaForm.initialPayTitle"/>
                         <input
                             type="number"
+                            name="initialPayment"
                             value={initialPayment}
                             className={`${classes.input} ${errors.totalValue ? classes.error : ''}`}
-                            {...register("initialPayment", { required: true })}
+                            {...register("initialPayment")}
                         />
-                        <InputRange
+                    </label>
+                    <InputRange
                             maxValue={initialValue}
                             minValue={0}
                             value={initialPayment}
-                            onChange={value => setInitialPayment(value)}
+                            onChange={value => changeInitialPayment(value)}
                         />
-                    </label>
+                    <div className={classes.hint}>
+                        <p>Cумма финансирования: {initialPayment}</p>
+                        <p>Процент финансирования: {percent}%</p>
+                    </div>
+                    {percent < 26 && <div className={classes.errorHint}>
+                        <p>Сумма первоначального взноса меньше 25% от стоимости недвижимости</p>
+                    </div>}
                 </div>
                 <div>
                     <label>
@@ -143,7 +172,7 @@ const Home = () => {
                 </div>
                 <hr className={classes.divider}/>
                 <div className="years">
-                    <label>
+                    <label onChange={changeYears}>
                         <FormattedMessage id="ipotekaForm.timeTitle"/>
                         <input
                             type="number"
@@ -151,33 +180,33 @@ const Home = () => {
                             className={`${classes.input} ${errors.time ? classes.error : ''}`}
                             {...register("time", { required: true })}
                         />
-                        <InputRange
-                            maxValue={30}
-                            minValue={0}
-                            value={years}
-                            onChange={value => setYears(value)}
-                        />
                     </label>
-                    {errors.time && <p className={classes.errorMessage}>
-                        <FormattedMessage id="global.required"/>
-                    </p>}
+                    <InputRange
+                        maxValue={30}
+                        minValue={0}
+                        value={years}
+                        onChange={value => changeYears(value)}
+                    />
+                    {years < 4 && <div className={classes.errorHint}>
+                        <p>Cрок ипотеки не может быть меньше 4 года</p>
+                    </div>}
                 </div>
                 <div>
-                    <label>
+                    <label onChange={changeMonthlyPayment}>
                         <FormattedMessage id="ipotekaForm.monthlyPayTitle"/>
                         <input
                             type="number"
-                            value={monthlyPay.toFixed() * 1}
+                            value={monthlyPay}
                             className={`${classes.input} ${errors.monthlyPay ? classes.error : ''}`}
                             {...register("monthlyPay", { required: true })}
                         />
-                        <InputRange
-                            maxValue={monthlyPayValue.toFixed() * 1}
-                            minValue={0}
-                            value={monthlyPay.toFixed() * 1}
-                            onChange={value => setMnothlyPay(value)}
-                        />
                     </label>
+                    <InputRange
+                            maxValue={monthlyPayValue}
+                            minValue={0}
+                            value={monthlyPay}
+                            onChange={value => changeMonthlyPayment(value)}
+                        />
                     {errors.monthlyPay && <p className={classes.errorMessage}>
                         <FormattedMessage id="global.required"/>
                     </p>}

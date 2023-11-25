@@ -60,6 +60,24 @@
     background-color: lightyellow;
 }
 
+.hint {
+    font-size: 12px;
+    margin-top: 30px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid;
+    margin-bottom: -15px;
+}
+
+.errorHint {
+    background: red;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
 @media screen and (min-width: 752px) {
     .form {
         grid-template-columns: repeat(2, 1fr);
