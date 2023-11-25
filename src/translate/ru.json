@@ -3,5 +3,19 @@
     "products.title": "Продукты",
     "menu.home": "Главная",
     "menu.products": "Продукты",
-    "global.close": "закрыть"
+    "global.close": "закрыть",
+    "ipotekaForm.totalvalueTitle": "Стоимость недвижимости",
+    "ipotekaForm.cityTitle": "Город покупки недвижимости",
+    "ipotekaForm.cityPlaceholder": "Выберите город",
+    "ipotekaForm.whenTitle": "Когда вы планируете оформить ипотеку?",
+    "ipotekaForm.whenPlaceholder": "Выберите период",
+    "ipotekaForm.initialPayTitle": "Первоначальный взнос",
+    "ipotekaForm.typeTitle": "Тип недвижимости",
+    "ipotekaForm.typePlaceholder": "Выберите тип недвижимости",
+    "ipotekaForm.isOwnTitle": "Вы уже владеете недвижимостью?",
+    "ipotekaForm.isOwnPlaceholder": "Выберите ответ",
+    "ipotekaForm.timeTitle": "Cрок",
+    "ipotekaForm.monthlyPayTitle": "Ежемесячный платеж",
+    "ipotekaForm.submit": "отправить",
+    "global.required": "обязательное поле"
 }

@@ -3,5 +3,19 @@
     "products.title": "Products",
     "menu.home": "Home",
     "menu.products": "Products",
-    "global.close": "close"
+    "global.close": "Close",
+    "ipotekaForm.totalvalueTitle": "Property value",
+    "ipotekaForm.cityTitle": "City",
+    "ipotekaForm.cityPlaceholder": "Select a city",
+    "ipotekaForm.whenTitle": "When do you want to make a hypothec?",
+    "ipotekaForm.whenPlaceholder": "Select",
+    "ipotekaForm.initialPayTitle": "Initial payment",
+    "ipotekaForm.typeTitle": "Property type",
+    "ipotekaForm.typePlaceholder": "Select property type",
+    "ipotekaForm.isOwnTitle": "Do you have a property?",
+    "ipotekaForm.isOwnPlaceholder": "Select an option",
+    "ipotekaForm.timeTitle": "Time",
+    "ipotekaForm.monthlyPayTitle": "Monthly payment",
+    "ipotekaForm.submit": "submit",
+    "global.required": "required"
 }

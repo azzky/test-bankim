@@ -1,1 +1,81 @@
-.form {}
+.form {
+    max-width: 1000px;
+    margin: 0 auto;
+    /* background-color: black; */
+    /* color: beige; */
+    padding: 3rem;
+    display: grid;
+    gap: 40px;
+}
+
+.form label {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+}
+
+.form input {
+    width: calc(100% - 22px);
+}
+
+.input {
+    display: block;
+    height: 38px;
+    border-radius: 3px;
+    border: 1px solid hsl(0, 0%, 80%);
+    padding: 0 10px;
+    width: 100%;
+    background-color: lightgray;
+}
+
+.error {
+    border-color: red;
+}
+
+.errorMessage {
+    color: red;
+}
+
+.divider {
+    width: 100%;
+    background-color: darkgray;
+    border: 0;
+    height: 1px;
+}
+
+.submit {
+    height: 40px;
+    background-color: yellow;
+    border: 0;
+    border-radius: 3px;
+}
+
+.submit:disabled {
+    background-color: lightyellow;
+}
+
+@media screen and (min-width: 752px) {
+    .form {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .divider {
+        grid-column-end: span 2;
+    }
+
+    .submit {
+        grid-column-start: 2;
+    }
+}
+
+@media screen and (min-width: 1092px) {
+    .form {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .divider {
+        grid-column-end: span 3;
+    }
+
+    .submit {
+        grid-column-start: 3;
+    }
+}
