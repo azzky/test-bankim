@@ -17,5 +17,10 @@
     "ipotekaForm.timeTitle": "Time",
     "ipotekaForm.monthlyPayTitle": "Monthly payment",
     "ipotekaForm.submit": "submit",
-    "global.required": "required"
+    "global.required": "required",
+    "ipotekaForm.title": "Calculate your hypothec fast and easily:",
+    "ipotekaForm.percentError": "Initial payment is less than 25%",
+    "ipotekaForm.initialPayValue": "Payment value: {value}",
+    "ipotekaForm.initialPayPercentage": "Payment percentage: {value}%",
+    "ipotekaForm.yearsErrorHint": "Cannot be less than 4 years"
 }

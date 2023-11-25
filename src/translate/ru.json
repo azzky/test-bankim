@@ -17,5 +17,10 @@
     "ipotekaForm.timeTitle": "Cрок",
     "ipotekaForm.monthlyPayTitle": "Ежемесячный платеж",
     "ipotekaForm.submit": "отправить",
-    "global.required": "обязательное поле"
+    "global.required": "обязательное поле",
+    "ipotekaForm.title": "Рассчитайте ипотеку быстро и просто:",
+    "ipotekaForm.percentError": "Сумма первоначального взноса меньше 25% от стоимости недвижимости",
+    "ipotekaForm.initialPayValue": "Cумма финансирования: {value}",
+    "ipotekaForm.initialPayPercentage": "Процент финансирования: {value}%",
+    "ipotekaForm.yearsErrorHint": "Cрок ипотеки не может быть меньше 4 года"
 }

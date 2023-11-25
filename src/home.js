@@ -60,7 +60,7 @@ const Home = () => {
     return (
         <>
             <h1>
-                <FormattedMessage id="home.title"/>
+                <FormattedMessage id="ipotekaForm.title"/>
             </h1>
             <form
                 onSubmit={handleSubmit(submitForm)}
@@ -131,11 +131,17 @@ const Home = () => {
                             onChange={value => changeInitialPayment(value)}
                         />
                     <div className={classes.hint}>
-                        <p>Cумма финансирования: {initialPayment}</p>
-                        <p>Процент финансирования: {percent}%</p>
+                        <p>
+                            <FormattedMessage id="ipotekaForm.initialPayValue" values={{ value: initialPayment }}/>
+                        </p>
+                        <p>
+                            <FormattedMessage id="ipotekaForm.initialPayPercentage" values={{ value: percent }}/>
+                        </p>                        
                     </div>
                     {percent < 26 && <div className={classes.errorHint}>
-                        <p>Сумма первоначального взноса меньше 25% от стоимости недвижимости</p>
+                        <p>
+                            <FormattedMessage id="ipotekaForm.percentError"/>
+                        </p>
                     </div>}
                 </div>
                 <div>
@@ -188,7 +194,9 @@ const Home = () => {
                         onChange={value => changeYears(value)}
                     />
                     {years < 4 && <div className={classes.errorHint}>
-                        <p>Cрок ипотеки не может быть меньше 4 года</p>
+                        <p>
+                            <FormattedMessage id="ipotekaForm.yearsErrorHint"/>
+                        </p>
                     </div>}
                 </div>
                 <div>
