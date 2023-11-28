@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Layout from './layout';
-import Home from './home';
-import Products from './products';
-// import Product from './product';
+import { Layout } from '@components';
+import { Home, Products } from '@pages';
+
+import '@styles/global.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,7 +15,6 @@ root.render(
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
                     <Route path="products" element={<Products />} />
-                    {/* <Route path="product/:id" element={<Product />} /> */}
                 </Route>
             </Routes>
         </BrowserRouter>

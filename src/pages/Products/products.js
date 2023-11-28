@@ -1,32 +1,22 @@
-import { useEffect, useState } from 'react';
+import { Suspense, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
-// import { Link } from 'react-router-dom';
+
+import { DummyProducts } from '@apis';
 
 import classes from './products.module.css'
 
 const Products = () => {
-    // 11:35 start
-    // 12:15 pause
-    // 12:20 start
-    const [products, setProducts] = useState(null);
+    const { products } = DummyProducts({ limit: 9 });
     const [selectedProduct, setSelectedProduct] = useState(null);
-
-    useEffect(() => {
-        try {
-            fetch('https://dummyjson.com/products?limit=9')
-            .then(res => res.json())
-            .then(json => setProducts(json.products))
-        }
-        catch(err) {
-            console.log(err);
-        }
-    }, []);
 
     return (
         <>
             <h1>
                 <FormattedMessage id="products.title"/>
             </h1>
+            <Suspense fallback={<p>loading</p>}>
+
+            </Suspense>
             {!products ?
                 <p>loading</p> : 
                 <ul>

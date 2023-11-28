@@ -1,0 +1,1 @@
+export { default as DummyProducts } from './dummyProducts'
