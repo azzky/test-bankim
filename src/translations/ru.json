@@ -22,5 +22,14 @@
     "ipotekaForm.percentError": "Сумма первоначального взноса меньше 25% от стоимости недвижимости",
     "ipotekaForm.initialPayValue": "Cумма финансирования: {value}",
     "ipotekaForm.initialPayPercentage": "Процент финансирования: {value}%",
-    "ipotekaForm.yearsErrorHint": "Cрок ипотеки не может быть меньше 4 года"
+    "ipotekaForm.yearsErrorHint": "Cрок ипотеки не может быть меньше 4 года",
+    "ipotekaForm.tooHighInintialValueHint": "Стоимость недвижимости не может превышать {value}",
+    "ipotekaForm.telAviv": "Тель Авив",
+    "ipotekaForm.ariel": "Ариэль",
+    "ipotekaForm.thisMonth": "В этом месяце",
+    "ipotekaForm.nextMonth": "В следующем месяце",
+    "ipotekaForm.newHouse": "Новая квартира",
+    "ipotekaForm.cottage": "Загородный дом",
+    "ipotekaForm.no": "Нет",
+    "ipotekaForm.yes": "Да"
 }

@@ -5,13 +5,14 @@ import { FormattedMessage } from 'react-intl';
  * @param props
  * @param {Object} props.classes styling from parent
  * @param {String} props.text intl mapped text id of message
+ * @param {Object} props.values intl values
  * @returns {JSX.Element}
  */
-const ErrorHint = ({ classes, text}) => {
+const ErrorHint = ({ classes, text, values }) => {
     return (
         <div className={classes.errorHint}>
             <p>
-                <FormattedMessage id={text}/>
+                <FormattedMessage id={text} values={values}/>
             </p>
         </div>
     );

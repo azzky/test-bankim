@@ -36,7 +36,9 @@ const Select = ({
                     <option selected disabled value="" key="placeholder">
                         <FormattedMessage id={placeholder}/>
                     </option>
-                    {options.map(option => <option key={option.value} value={option.value}>{option.label}</option>)}
+                    {options.map(option => <option key={option.value} value={option.value}>
+                        <FormattedMessage id={'ipotekaForm.'+option.value}/>
+                    </option>)}
                 </select>
             </label>
             <ErrorMessage message="global.required" isShow={errors.city}/>

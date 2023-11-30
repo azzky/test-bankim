@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form"
 
 import { FormattedMessage } from 'react-intl';
 
-import { cities, monthsOptions, typeOptions, isOwnOptions } from './config';
+import { cities, monthsOptions, typeOptions, isOwnOptions, maxInitialValue } from './config';
 
 import classes from './hypothecForm.module.css';
 import { Divider, ErrorMessage, ErrorHint, Select, InputWithRange } from "@components";
@@ -38,10 +38,11 @@ const HypothecForm = () => {
                     <input type="number"
                         name="totalValue"
                         className={`${classes.input} ${errors.totalValue ? classes.error : ''}`}
-                        {...register("totalValue", { required: true })}
+                        {...register("totalValue", { required: true, max: maxInitialValue, min: 1 })}
                         value={initialValue}
                         onChange={changeInitialValue}
                     />
+                    {initialValue > maxInitialValue && <ErrorHint classes={classes} text="ipotekaForm.tooHighInintialValueHint" values={{ value: maxInitialValue }}/>}
                 </label>
                 <ErrorMessage message="global.required" isShow={errors.totalValue}/>
             </div>

@@ -1,19 +1,21 @@
 export const cities = [
-    { value: 'telaviv', label: 'Tel Aviv' },
-    { value: 'ariel', label: 'Ariel' }
+    { value: 'telAviv' },
+    { value: 'ariel' }
 ];
 
 export const monthsOptions = [
-    { value: '0', label: 'this month' },
-    { value: '1', label: 'next month' }
+    { value: 'thisMonth', label: 'this month' },
+    { value: 'nextMonth', label: 'next month' }
 ];
 
 export const typeOptions = [
-    { value: '0', label: 'new house' },
-    { value: '1', label: 'cottage' }
+    { value: 'newHouse', label: 'new house' },
+    { value: 'cottage', label: 'cottage' }
 ];
 
 export const isOwnOptions = [
-    { value: '0', label: 'no' },
-    { value: '1', label: 'yes' }
+    { value: 'no', label: 'no' },
+    { value: 'yes', label: 'yes' }
 ];
+
+export const maxInitialValue = 10000000;

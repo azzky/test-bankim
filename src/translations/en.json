@@ -22,5 +22,14 @@
     "ipotekaForm.percentError": "Initial payment is less than 25%",
     "ipotekaForm.initialPayValue": "Payment value: {value}",
     "ipotekaForm.initialPayPercentage": "Payment percentage: {value}%",
-    "ipotekaForm.yearsErrorHint": "Cannot be less than 4 years"
+    "ipotekaForm.yearsErrorHint": "Cannot be less than 4 years",
+    "ipotekaForm.tooHighInintialValueHint": "Initial payment cannot be greater than {value}",
+    "ipotekaForm.telAviv": "Tel Aviv",
+    "ipotekaForm.ariel": "Ariel",
+    "ipotekaForm.thisMonth": "This month",
+    "ipotekaForm.nextMonth": "Next month",
+    "ipotekaForm.newHouse": "New house",
+    "ipotekaForm.cottage": "Cottage",
+    "ipotekaForm.no": "No",
+    "ipotekaForm.yes": "Yes"
 }

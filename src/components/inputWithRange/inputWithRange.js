@@ -34,7 +34,7 @@ const InputWithRange = ({
                     name={fieldName}
                     value={value}
                     className={classes.input}
-                    {...register(fieldName)}
+                    {...register(fieldName, { max: maxValue, min: minvalue })}
                 />
             </label>
             <InputRange
